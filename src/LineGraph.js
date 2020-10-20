@@ -1,12 +1,11 @@
 import React from 'react'
 
-function map() {
+function LineGraph() {
     return (
-        <div className='map'>
-        
+        <div>
             
         </div>
     )
 }
 
-export default map
+export default LineGraph;
