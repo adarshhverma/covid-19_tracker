@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import InfoBox from './infoBox';
-import Map from './map';
+import Map from './Map';
 import Table from './Table';
-import {sortData} from './util'
+import 'leaflet/dist/leaflet.css';
+import {sortData} from './util';
 import './App.css';
 import {
   MenuItem,
@@ -12,14 +13,19 @@ import {
   CardContent
 } from "@material-ui/core";
 
+
+
 function App() {
 
   const [countries, setcountries] = useState([]);
   const [country, setCountry] = useState('worldwide');
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, SetTableData] = useState([]);
+  const [mapCenter, setMapCenter] = useState({ lat: 26.5570505, lng: 11.9008317 });
+  const [mapZoom, setMapZoom] = useState(2.2);
+  const [mapCountries, setMapCountries] = useState([]);
 
-
+                                                                                      
   useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/all").then(response => response.json()).then(data => {
       setCountryInfo(data);
@@ -38,6 +44,7 @@ function App() {
       
       const sortedData = sortData(data);
       SetTableData(sortedData);
+      setMapCountries(data);
       setcountries(countries);
 
       
@@ -61,6 +68,9 @@ function App() {
     .then(data =>{
       setCountry(countryCode);
       setCountryInfo(data);
+
+      setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+      setMapZoom(4);
 
     })
 
@@ -95,7 +105,11 @@ function App() {
         
         </div>
 
-        <Map/>
+        <Map
+          center = {mapCenter}
+          zoom = {mapZoom}
+          countries={mapCountries}
+        />
         
 
       </div>
@@ -103,8 +117,8 @@ function App() {
             <CardContent>
                <h3>this is list</h3>
                <Table countries = {tableData}/>
-               <h3>this is Graph</h3>
-               <LineGraph />
+               
+              
             </CardContent>
           </Card>
     
