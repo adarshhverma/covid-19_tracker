@@ -87,9 +87,9 @@ function App() {
               value={country}
               onChange={onCountryChange}
             >
-              <MenuItem value="worldwide">Worldwide</MenuItem>
+              <MenuItem className='dropdown_text' value="worldwide">Worldwide</MenuItem>
               {countries.map((country) => (
-                <MenuItem value={country.value}>{country.name}</MenuItem>
+                <MenuItem className='dropdown_text' value={country.value}>{country.name}</MenuItem>
               ))}
             </Select>
           </FormControl>
@@ -136,6 +136,7 @@ function App() {
           <Card className='credits'>
               <CardContent>
                 <h2>Created by Adarsh Verma</h2>
+                <p>Source Code available at <a href="https://github.com/adarshhverma/covid-19_tracker" target="_blank">github</a></p>
               </CardContent>
           </Card>
         </div>
