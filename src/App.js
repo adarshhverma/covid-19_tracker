@@ -136,7 +136,7 @@ function App() {
           <Card className='credits'>
               <CardContent>
                 <h2>Created by Adarsh Verma</h2>
-                <p>Source Code available at <a href="https://github.com/adarshhverma/covid-19_tracker" target="_blank">github</a></p>
+                <p>Source Code available at <a href="https://github.com/adarshhverma/covid-19_tracker" target="_blank" rel="noopener noreferrer">github</a></p>
               </CardContent>
           </Card>
         </div>
