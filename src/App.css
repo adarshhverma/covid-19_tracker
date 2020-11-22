@@ -3,24 +3,43 @@
 }
 
 body {
-  background-color:#f5f6fa;
-  
+  background-color: #f5f6fa;
 }
 
-.app_title{
-  color: #66fcf1;
+.app {
+  display: flex;
+  justify-content: space-between;
+  background: #1A2980;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #26D0CE, #1A2980); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-top: 0px;
+  padding: 20px;
 }
 
-.select_dropdwn{
-  border: 2px solid #66fcf1;
+.app__dropdown {
+  background-color: #dbf6e9;
+  border-radius:20px;
 }
 
+.credits{
+  padding: 20px;
+  margin-top: 20px;
+}
 
-.app_header {
+.app__header {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  padding: 20px;
+  /* margin-bottom: 20px; */
+  background-color:#0E0B16;
   justify-content: space-between;
+}
+
+
+
+.app__header > h1 {
+  color: #4717f6;
+  font-size: 3rem;
 }
 
 .app__stats {
@@ -29,22 +48,27 @@ body {
   justify-content: space-between;
 }
 
-InfoBox{
-  background-color: #45a29e;
+.app__left {
+  flex: 0.98;
 }
 
-.app_left{
-  flex: 0.8;
+.app__right{
+  background-color: #0E0B16;
 }
 
-.app{
-  display: flex;
-  padding: 20px;
-  justify-content: space-evenly;
+.app__information > h3 {
+  color: #6a5d5d;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-@media (max-width: 998px){
-  .app{
+.app__information > h3:last-of-type {
+  margin-top: 1rem;
+}
+
+@media (max-width: 990px) {
+  .app {
     flex-direction: column;
   }
 }

@@ -4,18 +4,18 @@ import {Map as LeafletMap, TileLayer} from 'react-leaflet';
 import { showDataOnMap } from './util';
 
 
-function map({center, zoom, countries}) {
+function Map({center, zoom, countries, casesType}) {
     return (
         <div className='map'>
             <LeafletMap center={center} zoom={zoom}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {showDataOnMap(countries)}
+                {showDataOnMap(countries, casesType)}
             </LeafletMap>
             
         </div>
     )
 }
 
-export default map
+export default Map
