@@ -9,11 +9,11 @@ import {
 } from "@material-ui/core";
 import './App.css';
 import "leaflet/dist/leaflet.css";
-import InfoBox from "./InfoBox";
-import LineGraph from "./LineGraph";
-import Table from "./Table";
+import InfoBox from "./components/InfoBox";
+import LineGraph from "./components/LineGraph";
+import Table from "./components/Table";
 import { sortData, prettyPrintStat } from "./util";
-import Map from "./Map";
+import Map from "./components/Map";
 
 function App() {
   //USESTATE HOOKS==================================================
